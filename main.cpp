@@ -8,13 +8,18 @@
 /******* Native include *******/
 #include <iostream>
 
+using namespace std;
+
 /******* Project include ******/
+#include "Joueur.hpp"
 
 /******* Espace de nommage ****/
 using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!" << endl;
+    Joueur J1 = Joueur("Robert", "Rob");
+
+    cout << "Hello World!" << endl;
     return 0;
 }

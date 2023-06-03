@@ -12,7 +12,7 @@ install: $(EXEC)
 uninstall:
 	rm  $(INSTALL_PATH)$(EXEC)
 
-$(EXEC): main.o
+$(EXEC): main.o Joueur.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 %.o: %.cpp
