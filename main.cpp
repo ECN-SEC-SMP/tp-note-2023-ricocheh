@@ -20,7 +20,6 @@ int main()
     Joueur J1 = Joueur("Robert", "Rob");
 
     cout << "Hello World!" << endl;
-    return 0;
 
     Sablier s1(15);
     s1.start();
