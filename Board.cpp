@@ -38,9 +38,9 @@ Cell* Board::getCell(int x, int y)
  * Si srictement supérieur à 3 et 3, renvoi les 4 cases du milieu
  * Si impair, arrondi inférieur
 */
-vector<vector<Cell> > Board::getZone(Zone zone)
+vector<vector<Cell *>> Board::getZone(Zone zone)
 {
-    vector<vector<Cell> > cell_zone;
+    vector<vector<Cell* >> cell_zone;
     int start_row, end_row, start_col, end_col;
 
     switch(zone)
@@ -79,29 +79,40 @@ vector<vector<Cell> > Board::getZone(Zone zone)
 
     for(int x = start_row; x <= end_row; x++)
     {
+        vector<Cell *> row;
         for(int y = start_col; y <= end_col; y++)
         {
-            
+            row.push_back(&matrice[x][y]);
         }
+        cell_zone.push_back(row);
     }
 
     return cell_zone;
 }
 
-vector<Cell> Board::getCol(int col)
+vector<Cell *> Board::getCol(int col)
 {
-    vector<Cell> col_copy;
-    vector<vector<Cell> >::iterator col_it;
+    vector<Cell *> col_copy;
 
-    for(col_it = matrice.begin(); col_it != matrice.end(); col_it++)
+    for(long unsigned int x = 0; x < matrice.size(); x++)
     {
-        col_copy.push_back((*col_it)[col]);
+        for(long unsigned int y = 0; y < matrice[x].size(); y++)
+        {
+            col_copy.push_back(&matrice[x][col]);
+        }
     }
 
     return col_copy;
 }
 
-vector<Cell> Board::getRow(int row)
+vector<Cell *> Board::getRow(int row)
 {
-    return matrice[row];
+    vector<Cell *> row_copy;
+
+    for(long unsigned int x = 0; x < matrice[row].size(); x++)
+    {
+        row_copy.push_back(&matrice[row][x]);
+    }
+
+    return row_copy;
 }
