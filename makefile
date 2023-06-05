@@ -12,7 +12,11 @@ install: $(EXEC)
 uninstall:
 	rm  $(INSTALL_PATH)$(EXEC)
 
+<<<<<<< Updated upstream
 $(EXEC): main.o Joueur.o Cell.o Board.o
+=======
+$(EXEC): main.o Sablier.o Robot.o
+>>>>>>> Stashed changes
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 %.o: %.cpp

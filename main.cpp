@@ -9,15 +9,31 @@
 #include <iostream>
 
 /******* Project include ******/
+<<<<<<< Updated upstream
 #include "Joueur.hpp"
+=======
+#include "Sablier.hpp"
+>>>>>>> Stashed changes
 
 /******* Espace de nommage ****/
 using namespace std;
 
 int main()
 {
+<<<<<<< Updated upstream
     Joueur J1 = Joueur("Robert", "Rob");
 
     cout << "Hello World!" << endl;
     return 0;
+=======
+    Sablier s1(15);
+    s1.start();
+    if(s1.isActive()){
+        cout<<"Le Timer est actif"<<endl;
+    }
+while(s1.isActive());
+cout<<"FINITO"<<endl;
+
+
+>>>>>>> Stashed changes
 }
