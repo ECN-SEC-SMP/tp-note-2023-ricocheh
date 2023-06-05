@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 
 using namespace std;
@@ -10,15 +11,6 @@ class Joueur
         string name;         // nom du joueur
         string shortName;    // surnom au cours de la partie
         char remStrokes;     // coups restants
-        enum nbJoueurs
-        {
-            NONE = 0,
-            UN_JOUEUR = 1,
-            DEUX_JOUEURS = 2,
-            TROIS_JOUEURS = 3,
-            QUATRES_JOUEURS = 4
-        };
-
     public:
 
         Joueur();                                       // Constructeur par défaut

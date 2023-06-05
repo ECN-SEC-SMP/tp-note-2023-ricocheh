@@ -8,8 +8,6 @@
 /******* Native include *******/
 #include <iostream>
 
-using namespace std;
-
 /******* Project include ******/
 #include "Joueur.hpp"
 
