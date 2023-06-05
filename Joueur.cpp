@@ -35,20 +35,6 @@ void Joueur::setRemStrokes(char strokes)
 }
 
 /**
- * @brief Permet de choisir son nombre de coups restant
- * @return rien
-*/
-void Joueur::chooseRemStrokes()
-{
-    char newStrokes;
-
-    cout << "Veuillez proposer un nombre de coups. : " << endl;
-    cin >> newStrokes;
-
-    setRemStrokes(newStrokes);
-}
-
-/**
  * @brief Retourne le nom du Joueur
  * @return le nom du Joueur
 */
