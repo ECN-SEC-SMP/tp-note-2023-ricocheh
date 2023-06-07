@@ -12,7 +12,7 @@ install: $(EXEC)
 uninstall:
 	rm  $(INSTALL_PATH)$(EXEC)
 
-$(EXEC): main.o Joueur.o Cell.o Board.o Sablier.o
+$(EXEC): main.o Joueur.o Cell.o Board.o Sablier.o MapManager.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 %.o: %.cpp
