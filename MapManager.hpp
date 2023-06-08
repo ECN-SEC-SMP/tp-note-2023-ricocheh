@@ -4,6 +4,8 @@
  */
  #pragma once
 
+ #include "Board.hpp"
+
 /**
  * @class       MapManager
  * @brief       Documentation de la class MapManager
@@ -18,6 +20,6 @@ class MapManager
 
     public:
         static MapManager* getInstance();
-        void loadBoard() const;
-        void renderBoard() const;
+        Board loadBoard() const;
+        void renderBoard(Board b1);
 };

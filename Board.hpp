@@ -38,4 +38,6 @@ class Board
         vector<vector<Cell>> getZone(Zone zone);
         vector<Cell> getCol(int col);
         vector<Cell> getRow(int row);
+        int getWidth();
+        int getLength();
 };

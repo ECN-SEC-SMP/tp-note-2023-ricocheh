@@ -105,3 +105,19 @@ vector<Cell> Board::getRow(int row)
 {
     return matrice[row];
 }
+
+/**
+ * @brief Renvoie la largeur du plateau
+*/
+int Board::getWidth()
+{
+    return this->width;
+}
+
+/**
+ * @brief Renvoie la longeur du plateau
+*/
+int Board::getLength()
+{
+    return this->length;
+}
