@@ -6,6 +6,7 @@
 /******* Native include *******/
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 /******* Project include ******/
 #include "MapManager.hpp"
@@ -18,7 +19,7 @@ MapManager* MapManager::instance = NULL;
 
 MapManager* MapManager::getInstance()
 {
-    //cout << "TODO initialiser le pointeur à null" << endl;
+    cout << "TODO initialiser le pointeur à null" << endl;
     if (!instance)
         instance = new MapManager;
     return instance;
@@ -92,9 +93,44 @@ void MapManager::displayBoard(Board b1)
     }
 }
 
-Board MapManager::loadBoard() const
+/**
+ * @brief Permet de générer les murs faisant le pourtour du plateau de jeu
+ * @param Prend le plateau de jeu dont on veut créer les limites
+*/
+void MapManager::addBoardLimit(Board* board) const
 {
-    Board b1 = Board(16, 16);
-    cout << "loadBoard effectué pour le plateau : " << endl;
-    return b1;
+    for (auto& cell : board->getCol(0))
+    {
+        cell->addWall(Cell::WALL_LEFT);
+    }
+
+    for (auto& cell : board->getCol(15))
+    {
+        cell->addWall(Cell::WALL_RIGHT);
+    }
+
+    for (auto& cell : board->getRow(0))
+    {
+        cell->addWall(Cell::WALL_UP);
+    }
+
+    for (auto& cell : board->getRow(15))
+    {
+        cell->addWall(Cell::WALL_DOWN);
+    }
+}
+
+/**
+ * @brief Permet de générer un plateau du nombre de lignes et de colones souhaité
+ * @param nb_row Nombre de lignes souhaité
+ * @param nb_col Nombre de colones souhaité
+*/
+Board MapManager::loadBoard(int nb_row, int nb_col) const
+{
+    cout << "Fonction loadBoard" << endl;
+    Board board = Board(nb_row, nb_col);
+
+    addBoardLimit(&board);
+
+    return board;
 }

@@ -20,6 +20,8 @@ class MapManager
 
     public:
         static MapManager* getInstance();
-        Board loadBoard() const;
+        Board loadBoard(int nb_row, int nb_col) const;
         void displayBoard(Board b1);
+        void addBoardLimit(Board* board) const;
+
 };
