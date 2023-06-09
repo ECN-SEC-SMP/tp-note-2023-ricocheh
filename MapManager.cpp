@@ -19,7 +19,6 @@ MapManager* MapManager::instance = NULL;
 
 MapManager* MapManager::getInstance()
 {
-    cout << "TODO initialiser le pointeur à null" << endl;
     if (!instance)
         instance = new MapManager;
     return instance;

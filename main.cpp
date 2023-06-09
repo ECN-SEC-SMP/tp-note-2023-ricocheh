@@ -19,8 +19,6 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello World!" << endl;
-
     MapManager* David = MapManager::getInstance();
     Board b1 = Board(16, 16);
 
@@ -38,7 +36,7 @@ int main()
         cout << "Le Timer est actif" << endl;
     }
     while(s1.isActive());
-    cout<<"FINITO"<<endl;
+    cout << "FINITO" << endl;
 
     return 0;
 }
