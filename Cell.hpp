@@ -40,4 +40,5 @@ class Cell
         int getWalls() const;
         Objective getObjective() const;
         void addObjective(Objective objective_type);
+        void setTaken(bool state);
 };
