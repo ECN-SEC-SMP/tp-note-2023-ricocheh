@@ -12,6 +12,7 @@
 #include "Joueur.hpp"
 #include "Board.hpp"
 #include "MapManager.hpp"
+#include "Sablier.hpp"
 
 /******* Espace de nommage ****/
 using namespace std;
@@ -29,6 +30,15 @@ int main()
 
     // Affichage du plateau
     David->displayBoard(b1);
+
+    Sablier s1(15);
+    s1.start();
+    if(s1.isActive())
+    {
+        cout << "Le Timer est actif" << endl;
+    }
+    while(s1.isActive());
+    cout<<"FINITO"<<endl;
 
     return 0;
 }

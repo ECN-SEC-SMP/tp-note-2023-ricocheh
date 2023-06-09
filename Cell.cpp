@@ -61,3 +61,8 @@ void Cell::addObjective(Objective objective_type)
 {
     obj = objective_type;
 }
+
+void Cell::setTaken(bool state)
+{
+    this->taken=state;
+}
