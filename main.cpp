@@ -25,6 +25,7 @@ int main()
 
     b1.getCell(0, 6)->addWall(Cell::WALL_LEFT);
     b1.getCell(3, 8)->addWall(Cell::WALL_LEFT | Cell::WALL_UP);
+    b1.getCell(8, 14)->addWall(Cell::WALL_DOWN | Cell::WALL_UP);
 
     // Affichage du plateau
     David->displayBoard(b1);
