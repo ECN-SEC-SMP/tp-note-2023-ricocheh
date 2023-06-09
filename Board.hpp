@@ -28,14 +28,14 @@ enum Zone
 class Board
 {
     private:
-        vector<vector<Cell>> matrice;
+        vector<vector<Cell> > matrice;
         int length;
         int width;
     public:
         Board(int nb_row, int nb_col);
         ~Board();
         Cell* getCell(int row, int col);
-        vector<vector<Cell>> getZone(Zone zone);
+        vector<vector<Cell> > getZone(Zone zone);
         vector<Cell> getCol(int col);
         vector<Cell> getRow(int row);
 };

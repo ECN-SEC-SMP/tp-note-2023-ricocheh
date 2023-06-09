@@ -38,9 +38,9 @@ Cell* Board::getCell(int x, int y)
  * Si srictement supérieur à 3 et 3, renvoi les 4 cases du milieu
  * Si impair, arrondi inférieur
 */
-vector<vector<Cell>> Board::getZone(Zone zone)
+vector<vector<Cell> > Board::getZone(Zone zone)
 {
-    vector<vector<Cell>> cell_zone;
+    vector<vector<Cell> > cell_zone;
     int start_row, end_row, start_col, end_col;
 
     switch(zone)
@@ -91,7 +91,7 @@ vector<vector<Cell>> Board::getZone(Zone zone)
 vector<Cell> Board::getCol(int col)
 {
     vector<Cell> col_copy;
-    vector<vector<Cell>>::iterator col_it;
+    vector<vector<Cell> >::iterator col_it;
 
     for(col_it = matrice.begin(); col_it != matrice.end(); col_it++)
     {
