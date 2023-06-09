@@ -29,16 +29,19 @@ MapManager::MapManager()
 
 }
 
+/**
+ *@brief Affiche le plateau de jeu dans un terminal avec le contenu des cellules (robot, murs, rien ... etc)
+ *@param b1 Plateau de jeu à afficher
+*/
 void MapManager::displayBoard(Board b1)
 {
-    // Get the dimensions of the board
+    // Recuperation des dimensions du plateau pour pouvoir iterer sur les colonnes et les lignes
     int width = b1.getWidth();
     int length = b1.getLength();
 
-    // Display the board
     for (int row = 0; row < length; ++row)
     {
-        // Display the upper horizontal walls of each cell
+        // Affiche la partie horizontale haute de chaque cellule
         for (int col = 0; col < width; ++col)
         {
             cout << "+";
@@ -50,7 +53,7 @@ void MapManager::displayBoard(Board b1)
         }
         cout << "+" << endl;
 
-        // Display the content of each cell (robot, vertical walls, etc.)
+        // Affiche le contenu de chaque cellule (robot, murs verticaux ou horizontaux)
         for (int col = 0; col < width; ++col)
         {
             const Cell* cell = b1.getCell(row, col);
@@ -59,7 +62,7 @@ void MapManager::displayBoard(Board b1)
             else
                 cout << " ";
 
-            // Display the robot if the cell is taken
+            // Affiche un robot si la cellule est occupée
             if (cell->isTaken())
                 cout << " R ";
             else
@@ -73,7 +76,7 @@ void MapManager::displayBoard(Board b1)
         cout << endl;
     }
 
-    // Display the lower horizontal walls of each cell
+    // Affiche la partie horizontale basse de chaque cellule
     for (int row = 0; row < length; ++row)
     {
         for (int col = 0; col < width; ++col)
