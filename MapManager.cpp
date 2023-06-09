@@ -5,6 +5,7 @@
 
 /******* Native include *******/
 #include <iostream>
+#include <vector>
 
 /******* Project include ******/
 #include "MapManager.hpp"
@@ -28,24 +29,64 @@ MapManager::MapManager()
 
 }
 
-void MapManager::renderBoard(Board b1)
+void MapManager::displayBoard(Board b1)
 {
-    int mapX = b1.getWidth();
-    int mapY = b1.getLength();
+    // Get the dimensions of the board
+    int width = b1.getWidth();
+    int length = b1.getLength();
 
-    for (int i = 0; i < mapX; i++)
+    // Display the board
+    for (int row = 0; row < length; ++row)
     {
-        for (int j = 0; j < mapY; j++)
+        // Display the upper horizontal walls of each cell
+        for (int col = 0; col < width; ++col)
         {
-            if (b1.getCell(i, j)->getWalls() & Cell::WALL_UP)    { cout <<  "^"; }
-            if (b1.getCell(i, j)->getWalls() & Cell::WALL_DOWN)  { cout <<  "_"; }
-            if (b1.getCell(i, j)->getWalls() & Cell::WALL_LEFT)  { cout << "L";  }
-            if (b1.getCell(i, j)->getWalls() & Cell::WALL_RIGHT) { cout << "R";  }
-            if (b1.getCell(i, j)->isTaken())                     { cout <<  "@"; }
+            cout << "+";
+            const Cell* cell = b1.getCell(row, col);
+            if (cell->isWalled(Cell::WALL_UP))
+                cout << "----";
+            else
+                cout << "    ";
+        }
+        cout << "+" << endl;
+
+        // Display the content of each cell (robot, vertical walls, etc.)
+        for (int col = 0; col < width; ++col)
+        {
+            const Cell* cell = b1.getCell(row, col);
+            if (cell->isWalled(Cell::WALL_LEFT))
+                cout << "|";
+            else
+                cout << " ";
+
+            // Display the robot if the cell is taken
+            if (cell->isTaken())
+                cout << " R ";
+            else
+                cout << "   ";
+
+            if (cell->isWalled(Cell::WALL_RIGHT))
+                cout << "|";
+            else
+                cout << " ";
         }
         cout << endl;
     }
-    cout << "Fonction renderBoard" << endl;
+
+    // Display the lower horizontal walls of each cell
+    for (int row = 0; row < length; ++row)
+    {
+        for (int col = 0; col < width; ++col)
+        {
+            cout << "+";
+            const Cell* cell = b1.getCell(row, col);
+            if (cell->isWalled(Cell::WALL_DOWN))
+                cout << "----";
+            else
+                cout << "    ";
+        }
+        cout << "+" << endl;
+    }
 }
 
 Board MapManager::loadBoard() const

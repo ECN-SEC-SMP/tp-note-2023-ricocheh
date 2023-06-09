@@ -21,5 +21,5 @@ class MapManager
     public:
         static MapManager* getInstance();
         Board loadBoard() const;
-        void renderBoard(Board b1);
+        void displayBoard(Board b1);
 };

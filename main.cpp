@@ -26,9 +26,8 @@ int main()
     b1.getCell(0, 6)->addWall(Cell::WALL_LEFT);
     b1.getCell(3, 8)->addWall(Cell::WALL_LEFT | Cell::WALL_UP);
 
-    cout << b1.getCell(0, 6)->getWalls() << endl;
-
-    David->renderBoard(b1);
+    // Affichage du plateau
+    David->displayBoard(b1);
 
     return 0;
 }
