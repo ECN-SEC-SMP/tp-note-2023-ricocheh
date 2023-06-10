@@ -184,4 +184,13 @@ void Exemple::copy(const int &a1, int &a2, int *a3)
 Cette classe est utilisée pour la gestion du temps dans le jeu. Elle utilise la librairie <Chrono>. 
 Dans ce projet, le sablier est utilisé pour décompter des temps de 1 minute. Celui-ci est utilisé après qu'un joueur ait annoncé le nombre de déplacement qu'il compte faire pour atteindre l'objectif. Pendant son écoulement, les autres joueurs peuvent proposer un nombre de déplacement en deçà du premier joueur si c'est possible. Quand le sablier est écoulé, le joueur avec le nombre de déplacement le moins élevé peut jouer.
     
-Pour répondre à ce cahier des charges nous avons créer une classe Sablier avec une méthode de qui lance le sablier, une qui l'arrête, une qui le remet à 0 et une qui permet de savoir si le temps est écoulé ou non.
+Pour répondre à ce cahier des charges, nous avons créé une classe Sablier avec une méthode de qui lance le sablier, une qui l'arrête, une qui le remet à 0 et une qui permet de savoir si le temps est écoulé ou non.
+ 
+### Classe Robot
+    
+Cette classe est utilisée pour créer et gérer les déplacements des robots.
+Dans ce projet, 4 robots sont présents. Ces robots peuvent se déplacer dans quatre directions possibles (haut, bas, gauche et droite) jusqu'à rencontrer un autre robot ou bien un mur.
+    
+Pour répondre à ce cahier des charges, nous avons créé une classe Robot qui permet d'instancier les quatre robots. Dans cette classe, il y a deux méthodes qui permettent de savoir quelle sont les positions X et Y, deux méthodes qui mettent à jour les positions que ça soit en X ou en Y tout en mettant à jour le statut d'occupation sur le plateau de jeu et une méthode déplacement. Cette dernière a pour objectif de déplacer un robot dans une des quatre directions possibles selon le choix effectué par l'utilisateur. Pour ce faire, la fonction passe de case en case et s'assure de pouvoir les traversé en fonction des murs et des robots présents sur les cases qu'il parcoure.
+    
+ 
