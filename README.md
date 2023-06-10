@@ -179,7 +179,7 @@ void Exemple::copy(const int &a1, int &a2, int *a3)
 ```
 ## Choix technique
 
-# Classe Sablier
+### Classe Sablier
 
 Cette classe est utilisée pour la gestion du temps dans le jeu. Elle utilise la librairie <Chrono>. 
 Dans ce projet, le sablier est utilisé pour décompter des temps de 1 minute. Celui-ci est utilisé après qu'un joueur ait annoncé le nombre de déplacement qu'il compte faire pour atteindre l'objectif. Pendant son écoulement, les autres joueurs peuvent proposer un nombre de déplacement en deçà du premier joueur si c'est possible. Quand le sablier est écoulé, le joueur avec le nombre de déplacement le moins élevé peut jouer.
