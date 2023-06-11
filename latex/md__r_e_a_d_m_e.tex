@@ -1,0 +1,197 @@
+{\itshape {\bfseries{Le groupe est constitué de ASSE Romain, FERRE Cedric, PROCCACIA Paul et LEQUEUX Alexis.}}}\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Introduction}\label{md__r_e_a_d_m_e_autotoc_md1}
+Ce projet a pour but d\textquotesingle{}implémenter le jeu ricochet. Ce projet sera l\textquotesingle{}occasion d\textquotesingle{}appliquer et donc de valider l\textquotesingle{}ensemble des concepts vues pendant les cours.
+
+Ce projet sera réalisé en C++. Le suivi de version sera avec GIT.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Regle de codage}\label{md__r_e_a_d_m_e_autotoc_md2}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{Attributs}\label{md__r_e_a_d_m_e_autotoc_md3}
+Par défaut, les attributs seront privés, il sera cependant possible de modifier ces derniers avec des accesseurs.\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{Convention de nommage}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Types start with upper case\+: {\ttfamily My\+Class}.
+\item Functions and variables start with lower case\+: {\ttfamily my\+Method}.
+\item Constants are all upper case\+: const double {\ttfamily PI=3.\+14159265358979323;}.
+\item Macro names use upper case with underscores\+: {\ttfamily INT\+\_\+\+MAX}.
+\item Template parameter names use camel case\+: {\ttfamily Input\+Iterator}.
+\item All other names use snake case\+: {\ttfamily unordered\+\_\+map}.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{Langue}\label{md__r_e_a_d_m_e_autotoc_md5}
+Le code sera rédigé en Anglais, les commentaires seront rédigés en francais.\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{Doxygen}\label{md__r_e_a_d_m_e_autotoc_md6}
+Les fichiers utiliseront l\textquotesingle{}entête suivante\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{ * @file exemple.h}
+\DoxyCodeLine{ * @brief La déclaration de la classe Exemple}
+\DoxyCodeLine{ * si besoin auteur, version et date}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{}
+\DoxyCodeLine{/******* Native include *******/}
+\DoxyCodeLine{\#include <iostream>}
+\DoxyCodeLine{}
+\DoxyCodeLine{/******* Project include ******/}
+\DoxyCodeLine{\#include "{}MonFichier.h++"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{/******* Espace de nommage ****/}
+\DoxyCodeLine{using namespace std;}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item les constantes et/ou macros \+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{ * @def NB}
+\DoxyCodeLine{ * @brief Définit le nombre 42 !}
+\DoxyCodeLine{*/}
+\DoxyCodeLine{\#define NB 42 //!< Un nombre NB}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item les types énumérés \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{C++\}}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{ * @enum TEnum}
+\DoxyCodeLine{ * @brief Description du type énuméré ...}
+\DoxyCodeLine{ *}
+\DoxyCodeLine{ * @var TEnum Val1}
+\DoxyCodeLine{ * @brief Description de Val1 ...}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{enum TEnum //! Un type énuméré ...}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    Val1,}
+\DoxyCodeLine{    Val2    //!< Description de Val2 ...}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+\item les structures \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{ * @struct Etat}
+\DoxyCodeLine{ * @brief Structure ...}
+\DoxyCodeLine{ *}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{struct Etat}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    bool present; //!< Membre définissant ...}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+\item les classes \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{ * @class       Exemple exemple.h "{}exemple.h"{}}
+\DoxyCodeLine{ * @brief       La déclaration de la classe Exemple}
+\DoxyCodeLine{ * @details     La classe \(\backslash\)c Exemple permet de montrer l'utilisation des \(\backslash\)em tags \(\backslash\)b Doxygen}
+\DoxyCodeLine{ * @author      Thierry vaira <thierr.vaira@gmail.com>}
+\DoxyCodeLine{ * @version     0.1}
+\DoxyCodeLine{ * @date        2020}
+\DoxyCodeLine{ * @note        Une note à l'attention de ceux qui lisent les notes}
+\DoxyCodeLine{ * @pre         Initialisez d'abord le système}
+\DoxyCodeLine{ * @post        L'objet est initialisé ou pas}
+\DoxyCodeLine{ * @bug         La copie est impossible ou illégale}
+\DoxyCodeLine{ * @warning     Une mauvaise utilisation peut faire planter votre application (c'est votre faute)}
+\DoxyCodeLine{ * @attention   Il faut toujours faire attention}
+\DoxyCodeLine{ * @remark      Une remarque à faire ?}
+\DoxyCodeLine{ * @copyright   GNU Public License.}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{class Exemple}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+\item les attributs \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{class Exemple}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    private:}
+\DoxyCodeLine{        int a; //!< a est ...}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+Les méthodes\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{ * @brief Constructeur par défaut de la classe Exemple.}
+\DoxyCodeLine{ *}
+\DoxyCodeLine{ * @see   Exemple::Exemple(int a)}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{Exemple::Exemple() : a(0)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{ * @brief Constructeur de la classe Exemple.}
+\DoxyCodeLine{ * @overload}
+\DoxyCodeLine{ * @param a la valeur initiale de l'attribut a}
+\DoxyCodeLine{ *}
+\DoxyCodeLine{ * @see   Exemple::Exemple(int a)}
+\DoxyCodeLine{ * @see   https://doc.qt.io/qt-\/5/qdatetime.html}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{Exemple::Exemple(int a) : a(a)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    QDateTime maintenant = QDateTime::currentDateTime();}
+\DoxyCodeLine{    qDebug() << Q\_FUNC\_INFO << maintenant.toString("{}dd/MM/yyyy"{}) << maintenant.toString("{}hh:mm:ss"{}) << "{}a"{} << a << this;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{ * @brief Accesseur de l'attribut a}
+\DoxyCodeLine{ * @callergraph}
+\DoxyCodeLine{ * @return a la valeur de l'attribut a}
+\DoxyCodeLine{ * @retval int la valeur de l'attribut a}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{int Exemple::getA() const}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    return a;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{ * @brief Mutateur de l'attribut a}
+\DoxyCodeLine{ * @callgraph}
+\DoxyCodeLine{ * @param a ...}
+\DoxyCodeLine{ * @exception range\_error Si a est négatif}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{void Exemple::setA(int a)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    if(a < 0 || a > NB)}
+\DoxyCodeLine{        throw range\_error("{}erreur plage"{});}
+\DoxyCodeLine{    this-\/>a = a;}
+\DoxyCodeLine{    qDebug() << Q\_FUNC\_INFO << "{}a"{} << getA();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{ * @brief Montre le sens des paramètres}
+\DoxyCodeLine{ * @param[in]       a1  ...}
+\DoxyCodeLine{ * @param[out]      a2  ...}
+\DoxyCodeLine{ * @param[in,out]   a3  ...}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{void Exemple::copy(const int \&a1, int \&a2, int *a3)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    /**}
+\DoxyCodeLine{     * @todo Implémenter la méthode}
+\DoxyCodeLine{     */}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{Choix technique}\label{md__r_e_a_d_m_e_autotoc_md7}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{Classe Sablier}\label{md__r_e_a_d_m_e_autotoc_md8}
+Cette classe est utilisée pour la gestion du temps dans le jeu. Elle utilise la librairie $<$\+Chrono$>$. Dans ce projet, le sablier est utilisé pour décompter des temps de 1 minute. Celui-\/ci est utilisé après qu\textquotesingle{}un joueur ait annoncé le nombre de déplacement qu\textquotesingle{}il compte faire pour atteindre l\textquotesingle{}objectif. Pendant son écoulement, les autres joueurs peuvent proposer un nombre de déplacement en deçà du premier joueur si c\textquotesingle{}est possible. Quand le sablier est écoulé, le joueur avec le nombre de déplacement le moins élevé peut jouer.
+
+Pour répondre à ce cahier des charges, nous avons créé une classe \mbox{\hyperlink{class_sablier}{Sablier}} avec une méthode de qui lance le sablier, une qui l\textquotesingle{}arrête, une qui le remet à 0 et une qui permet de savoir si le temps est écoulé ou non.\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{Classe Robot}\label{md__r_e_a_d_m_e_autotoc_md9}
+Cette classe est utilisée pour créer et gérer les déplacements des robots. Dans ce projet, 4 robots sont présents. Ces robots peuvent se déplacer dans quatre directions possibles (haut, bas, gauche et droite) jusqu\textquotesingle{}à rencontrer un autre robot ou bien un mur.
+
+Pour répondre à ce cahier des charges, nous avons créé une classe \mbox{\hyperlink{class_robot}{Robot}} qui permet d\textquotesingle{}instancier les quatre robots. Dans cette classe, il y a deux méthodes qui permettent de savoir quelle sont les positions X et Y, deux méthodes qui mettent à jour les positions que ça soit en X ou en Y tout en mettant à jour le statut d\textquotesingle{}occupation sur le plateau de jeu. Pour finir, nous avosn créé une méthode déplacement qui a pour objectif de déplacer un robot dans une des quatre directions possibles selon le choix effectué par le joueur. Pour ce faire, la fonction passe de case en case et s\textquotesingle{}assure de pouvoir les traverser en fonction des murs et des robots présents sur les cases qu\textquotesingle{}il parcoure. 

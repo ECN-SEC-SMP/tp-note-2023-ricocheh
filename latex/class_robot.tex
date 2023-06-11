@@ -1,0 +1,141 @@
+\hypertarget{class_robot}{}\doxysection{Robot Class Reference}
+\label{class_robot}\index{Robot@{Robot}}
+
+
+Déclaration de la classe \mbox{\hyperlink{class_robot}{Robot}}.  
+
+
+
+
+{\ttfamily \#include $<$Robot.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_robot_a9edfc168c23dc40d7f88ff2a757021f8}{Robot}} (int x, int y, couleur couleurrobot, \mbox{\hyperlink{class_board}{Board}} $\ast$b1)
+\begin{DoxyCompactList}\small\item\em Positionne le robot, enregistre la couleur, occupe une case du plateau de jeu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robot_a1dc46dc90fe38a9a4e7a726471329d9c}{deplacement}} (sens direction, \mbox{\hyperlink{class_board}{Board}} $\ast$b1)
+\begin{DoxyCompactList}\small\item\em Permet de déplacer le robot dans l\textquotesingle{}une des 4 directions. Met à jour le statut d\textquotesingle{}occupation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_robot_ae34f24c5deb45687c73d681ba6125f69}{getX}} (void)
+\begin{DoxyCompactList}\small\item\em Permet de récupérer la colonne du robot. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_robot_a5834f00818db405e74e324ee7e5584b0}{getY}} (void)
+\begin{DoxyCompactList}\small\item\em Permet de récupérer la ligne du robot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robot_a117b97bcb54fcda73b77e38ba1f2b555}{setX}} (int x, \mbox{\hyperlink{class_board}{Board}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Permet de définir la colonne du robot dans le jeu. Met à jour le statut d\textquotesingle{}occupation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robot_a428242f988792153771fe700303a35dd}{setY}} (int y, \mbox{\hyperlink{class_board}{Board}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Permet de définir la ligne du robot dans le jeu. Met à jour le statut d\textquotesingle{}occupation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Déclaration de la classe \mbox{\hyperlink{class_robot}{Robot}}. 
+
+La classe \mbox{\hyperlink{class_robot}{Robot}} représente un robot sur le plateau de jeu. Chaque robot a une position (x, y) et une couleur. Elle fournit des fonctionnalités pour déplacer le robot et obtenir/modifier sa position. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_robot_a9edfc168c23dc40d7f88ff2a757021f8}\label{class_robot_a9edfc168c23dc40d7f88ff2a757021f8}} 
+\index{Robot@{Robot}!Robot@{Robot}}
+\index{Robot@{Robot}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{Robot()}{Robot()}}
+{\footnotesize\ttfamily Robot\+::\+Robot (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{couleur}]{couleurrobot,  }\item[{\mbox{\hyperlink{class_board}{Board}} $\ast$}]{b1 }\end{DoxyParamCaption})}
+
+
+
+Positionne le robot, enregistre la couleur, occupe une case du plateau de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Choix de la colonne du jeu. \\
+\hline
+{\em y} & Choix de la ligne du jeu. \\
+\hline
+{\em couleurrobot} & Choix de la couleur du robot. \\
+\hline
+{\em b1} & Pointeur vers le plateau de jeu. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_robot_a1dc46dc90fe38a9a4e7a726471329d9c}\label{class_robot_a1dc46dc90fe38a9a4e7a726471329d9c}} 
+\index{Robot@{Robot}!deplacement@{deplacement}}
+\index{deplacement@{deplacement}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{deplacement()}{deplacement()}}
+{\footnotesize\ttfamily void Robot\+::deplacement (\begin{DoxyParamCaption}\item[{sens}]{direction,  }\item[{\mbox{\hyperlink{class_board}{Board}} $\ast$}]{b1 }\end{DoxyParamCaption})}
+
+
+
+Permet de déplacer le robot dans l\textquotesingle{}une des 4 directions. Met à jour le statut d\textquotesingle{}occupation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & Direction de déplacement (left, right, up, down). \\
+\hline
+{\em b1} & Adresse du plateau de jeu. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_robot_ae34f24c5deb45687c73d681ba6125f69}\label{class_robot_ae34f24c5deb45687c73d681ba6125f69}} 
+\index{Robot@{Robot}!getX@{getX}}
+\index{getX@{getX}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily int Robot\+::getX (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Permet de récupérer la colonne du robot. 
+
+\begin{DoxyReturn}{Returns}
+Colonne du robot. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_robot_a5834f00818db405e74e324ee7e5584b0}\label{class_robot_a5834f00818db405e74e324ee7e5584b0}} 
+\index{Robot@{Robot}!getY@{getY}}
+\index{getY@{getY}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily int Robot\+::getY (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Permet de récupérer la ligne du robot. 
+
+\begin{DoxyReturn}{Returns}
+Ligne du robot. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_robot_a117b97bcb54fcda73b77e38ba1f2b555}\label{class_robot_a117b97bcb54fcda73b77e38ba1f2b555}} 
+\index{Robot@{Robot}!setX@{setX}}
+\index{setX@{setX}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void Robot\+::setX (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{\mbox{\hyperlink{class_board}{Board}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Permet de définir la colonne du robot dans le jeu. Met à jour le statut d\textquotesingle{}occupation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Choix de la colonne du jeu. \\
+\hline
+{\em b} & Adresse du plateau de jeu. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_robot_a428242f988792153771fe700303a35dd}\label{class_robot_a428242f988792153771fe700303a35dd}} 
+\index{Robot@{Robot}!setY@{setY}}
+\index{setY@{setY}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void Robot\+::setY (\begin{DoxyParamCaption}\item[{int}]{y,  }\item[{\mbox{\hyperlink{class_board}{Board}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Permet de définir la ligne du robot dans le jeu. Met à jour le statut d\textquotesingle{}occupation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Choix de la ligne du jeu. \\
+\hline
+{\em b} & Adresse du plateau de jeu. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_robot_8hpp}{Robot.\+hpp}}\item 
+\mbox{\hyperlink{_robot_8cpp}{Robot.\+cpp}}\end{DoxyCompactItemize}

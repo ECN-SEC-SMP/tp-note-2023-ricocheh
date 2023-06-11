@@ -1,0 +1,71 @@
+\hypertarget{_board_8hpp}{}\doxysection{Board.\+hpp File Reference}
+\label{_board_8hpp}\index{Board.hpp@{Board.hpp}}
+
+
+Contient la déclaration de la classe \mbox{\hyperlink{class_board}{Board}}.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include \char`\"{}Cell.\+hpp\char`\"{}}\newline
+Include dependency graph for Board.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_board}{Board}}
+\begin{DoxyCompactList}\small\item\em Classe représentant le plateau de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8}{Zone}} \{ \newline
+\mbox{\hyperlink{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a2159ffbd3a68037511ab5ab4dd35ace7}{CENTER}} = 0
+, \mbox{\hyperlink{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a6b4ed010af97f067c8ba669e400f3f93}{TOP\+\_\+\+LEFT}}
+, \mbox{\hyperlink{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8aab97669fecf009df518a0d2016b86364}{TOP\+\_\+\+RIGHT}}
+, \mbox{\hyperlink{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a6f6b2705d50f7af47405ee7becaabbdb}{BOTTOM\+\_\+\+LEFT}}
+, \newline
+\mbox{\hyperlink{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a5bc569072880e473b667c10005c7aefd}{BOTTOM\+\_\+\+RIGHT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Permet de cibler une zone précise du plateau de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contient la déclaration de la classe \mbox{\hyperlink{class_board}{Board}}. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8}\label{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8}} 
+\index{Board.hpp@{Board.hpp}!Zone@{Zone}}
+\index{Zone@{Zone}!Board.hpp@{Board.hpp}}
+\doxysubsubsection{\texorpdfstring{Zone}{Zone}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8}{Zone}}}
+
+
+
+Permet de cibler une zone précise du plateau de jeu. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CENTER@{CENTER}!Board.hpp@{Board.hpp}}\index{Board.hpp@{Board.hpp}!CENTER@{CENTER}}}\mbox{\Hypertarget{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a2159ffbd3a68037511ab5ab4dd35ace7}\label{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a2159ffbd3a68037511ab5ab4dd35ace7}} 
+CENTER&Zone centrale du plateau. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOP\_LEFT@{TOP\_LEFT}!Board.hpp@{Board.hpp}}\index{Board.hpp@{Board.hpp}!TOP\_LEFT@{TOP\_LEFT}}}\mbox{\Hypertarget{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a6b4ed010af97f067c8ba669e400f3f93}\label{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a6b4ed010af97f067c8ba669e400f3f93}} 
+TOP\+\_\+\+LEFT&Coin supérieur gauche du plateau. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOP\_RIGHT@{TOP\_RIGHT}!Board.hpp@{Board.hpp}}\index{Board.hpp@{Board.hpp}!TOP\_RIGHT@{TOP\_RIGHT}}}\mbox{\Hypertarget{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8aab97669fecf009df518a0d2016b86364}\label{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8aab97669fecf009df518a0d2016b86364}} 
+TOP\+\_\+\+RIGHT&Coin supérieur droit du plateau. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOTTOM\_LEFT@{BOTTOM\_LEFT}!Board.hpp@{Board.hpp}}\index{Board.hpp@{Board.hpp}!BOTTOM\_LEFT@{BOTTOM\_LEFT}}}\mbox{\Hypertarget{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a6f6b2705d50f7af47405ee7becaabbdb}\label{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a6f6b2705d50f7af47405ee7becaabbdb}} 
+BOTTOM\+\_\+\+LEFT&Coin inférieur gauche du plateau. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOTTOM\_RIGHT@{BOTTOM\_RIGHT}!Board.hpp@{Board.hpp}}\index{Board.hpp@{Board.hpp}!BOTTOM\_RIGHT@{BOTTOM\_RIGHT}}}\mbox{\Hypertarget{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a5bc569072880e473b667c10005c7aefd}\label{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8a5bc569072880e473b667c10005c7aefd}} 
+BOTTOM\+\_\+\+RIGHT&Coin inférieur droit du plateau. \\
+\hline
+
+\end{DoxyEnumFields}

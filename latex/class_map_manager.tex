@@ -1,0 +1,88 @@
+\hypertarget{class_map_manager}{}\doxysection{Map\+Manager Class Reference}
+\label{class_map_manager}\index{MapManager@{MapManager}}
+
+
+Documentation de la classe \mbox{\hyperlink{class_map_manager}{Map\+Manager}}.  
+
+
+
+
+{\ttfamily \#include $<$Map\+Manager.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_board}{Board}} \mbox{\hyperlink{class_map_manager_ae87bb15e3b22c386fc8acbb178245a80}{load\+Board}} (int nb\+\_\+row, int nb\+\_\+col) const
+\begin{DoxyCompactList}\small\item\em Charge un plateau de jeu avec le nombre de lignes et de colonnes spécifiées. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_map_manager_acc4b1c800961c356845f73731fd0b229}{display\+Board}} (\mbox{\hyperlink{class_board}{Board}} board) const
+\begin{DoxyCompactList}\small\item\em Affiche le plateau de jeu dans un terminal avec le contenu des cellules (robot, murs, rien ... etc). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_map_manager}{Map\+Manager}} $\ast$ \mbox{\hyperlink{class_map_manager_a65c0b7b65b32da26b9619e497df189a6}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Obtient l\textquotesingle{}instance unique de la classe \mbox{\hyperlink{class_map_manager}{Map\+Manager}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Documentation de la classe \mbox{\hyperlink{class_map_manager}{Map\+Manager}}. 
+
+La classe {\ttfamily \mbox{\hyperlink{class_map_manager}{Map\+Manager}}} permet d\textquotesingle{}effectuer la création et la manipulation du plateau de jeu. Elle fournit des fonctionnalités pour ajouter des limites, un centre, des murs aléatoires et des coins au plateau de jeu. \begin{DoxyAuthor}{Author}
+ASSE Romain \href{mailto:asse-romain@outlook.fr}{\texttt{ asse-\/romain@outlook.\+fr}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_map_manager_acc4b1c800961c356845f73731fd0b229}\label{class_map_manager_acc4b1c800961c356845f73731fd0b229}} 
+\index{MapManager@{MapManager}!displayBoard@{displayBoard}}
+\index{displayBoard@{displayBoard}!MapManager@{MapManager}}
+\doxysubsubsection{\texorpdfstring{displayBoard()}{displayBoard()}}
+{\footnotesize\ttfamily void Map\+Manager\+::display\+Board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_board}{Board}}}]{board }\end{DoxyParamCaption}) const}
+
+
+
+Affiche le plateau de jeu dans un terminal avec le contenu des cellules (robot, murs, rien ... etc). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Le plateau de jeu à afficher. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_map_manager_a65c0b7b65b32da26b9619e497df189a6}\label{class_map_manager_a65c0b7b65b32da26b9619e497df189a6}} 
+\index{MapManager@{MapManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!MapManager@{MapManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_manager}{Map\+Manager}} $\ast$ Map\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obtient l\textquotesingle{}instance unique de la classe \mbox{\hyperlink{class_map_manager}{Map\+Manager}}. 
+
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}instance unique de \mbox{\hyperlink{class_map_manager}{Map\+Manager}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_manager_ae87bb15e3b22c386fc8acbb178245a80}\label{class_map_manager_ae87bb15e3b22c386fc8acbb178245a80}} 
+\index{MapManager@{MapManager}!loadBoard@{loadBoard}}
+\index{loadBoard@{loadBoard}!MapManager@{MapManager}}
+\doxysubsubsection{\texorpdfstring{loadBoard()}{loadBoard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_board}{Board}} Map\+Manager\+::load\+Board (\begin{DoxyParamCaption}\item[{int}]{nb\+\_\+row,  }\item[{int}]{nb\+\_\+col }\end{DoxyParamCaption}) const}
+
+
+
+Charge un plateau de jeu avec le nombre de lignes et de colonnes spécifiées. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nb\+\_\+row} & Le nombre de lignes du plateau. \\
+\hline
+{\em nb\+\_\+col} & Le nombre de colonnes du plateau. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Le plateau de jeu chargé. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_map_manager_8hpp}{Map\+Manager.\+hpp}}\item 
+\mbox{\hyperlink{_map_manager_8cpp}{Map\+Manager.\+cpp}}\end{DoxyCompactItemize}

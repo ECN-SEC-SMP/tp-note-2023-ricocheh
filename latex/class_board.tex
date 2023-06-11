@@ -1,0 +1,171 @@
+\hypertarget{class_board}{}\doxysection{Board Class Reference}
+\label{class_board}\index{Board@{Board}}
+
+
+Classe représentant le plateau de jeu.  
+
+
+
+
+{\ttfamily \#include $<$Board.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_board_ab727247df2509868246003740b15f7eb}{Board}} (int nb\+\_\+row, int nb\+\_\+col)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{class_board}{Board}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_board_af73f45730119a1fd8f6670f53f959e68}\label{class_board_af73f45730119a1fd8f6670f53f959e68}} 
+\mbox{\hyperlink{class_board_af73f45730119a1fd8f6670f53f959e68}{$\sim$\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \mbox{\hyperlink{class_board}{Board}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cell}{Cell}} $\ast$ \mbox{\hyperlink{class_board_aa8fe7118004adb54f6c39bcbc584fa9d}{get\+Cell}} (int row, int col)
+\begin{DoxyCompactList}\small\item\em Récupère la cellule à partir de ses coordonnées. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ \mbox{\hyperlink{class_cell}{Cell}} $\ast$ $>$ $>$ \mbox{\hyperlink{class_board_a4fddeec56ab1dc7250e210465a0b2bea}{get\+Zone}} (\mbox{\hyperlink{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8}{Zone}} zone)
+\begin{DoxyCompactList}\small\item\em Récupère une zone spécifique du plateau de jeu. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_cell}{Cell}} $\ast$ $>$ \mbox{\hyperlink{class_board_a69e39b392a96def5c7ee72de8a5d4927}{get\+Col}} (int col)
+\begin{DoxyCompactList}\small\item\em Récupère une colonne spécifique du plateau de jeu. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_cell}{Cell}} $\ast$ $>$ \mbox{\hyperlink{class_board_a68ffdfc523eaba878e669205363ced9f}{get\+Row}} (int row)
+\begin{DoxyCompactList}\small\item\em Récupère une ligne spécifique du plateau de jeu. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_board_a2b93697d47e6f6c571863b93e51272a6}{get\+Length}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie la longueur du plateau de jeu. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_board_a67905f3b441a8605aeb50d8978415aa0}{get\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Renvoie la largeur du plateau de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_board_a9bfb62439c430a819e43976a30f3d7eb}\label{class_board_a9bfb62439c430a819e43976a30f3d7eb}} 
+static set$<$ pair$<$ int, int $>$ $>$ \mbox{\hyperlink{class_board_a9bfb62439c430a819e43976a30f3d7eb}{walls\+Coordinates}}
+\begin{DoxyCompactList}\small\item\em Coordonnées des murs sur le plateau de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant le plateau de jeu. 
+
+La classe \mbox{\hyperlink{class_board}{Board}} permet de stocker l\textquotesingle{}ensemble des cellules du plateau de jeu. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_board_ab727247df2509868246003740b15f7eb}\label{class_board_ab727247df2509868246003740b15f7eb}} 
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily Board\+::\+Board (\begin{DoxyParamCaption}\item[{int}]{nb\+\_\+row,  }\item[{int}]{nb\+\_\+col }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{class_board}{Board}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nb\+\_\+row} & Le nombre de lignes du plateau. \\
+\hline
+{\em nb\+\_\+col} & Le nombre de colonnes du plateau. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_board_aa8fe7118004adb54f6c39bcbc584fa9d}\label{class_board_aa8fe7118004adb54f6c39bcbc584fa9d}} 
+\index{Board@{Board}!getCell@{getCell}}
+\index{getCell@{getCell}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getCell()}{getCell()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_cell}{Cell}} $\ast$ Board\+::get\+Cell (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Récupère la cellule à partir de ses coordonnées. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & La coordonnée x de la cellule. \\
+\hline
+{\em y} & La coordonnée y de la cellule. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers la cellule correspondante. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a69e39b392a96def5c7ee72de8a5d4927}\label{class_board_a69e39b392a96def5c7ee72de8a5d4927}} 
+\index{Board@{Board}!getCol@{getCol}}
+\index{getCol@{getCol}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getCol()}{getCol()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_cell}{Cell}} $\ast$ $>$ Board\+::get\+Col (\begin{DoxyParamCaption}\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+Récupère une colonne spécifique du plateau de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & Le numéro de la colonne à récupérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un vecteur de pointeurs de cellules représentant la colonne demandée. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a2b93697d47e6f6c571863b93e51272a6}\label{class_board_a2b93697d47e6f6c571863b93e51272a6}} 
+\index{Board@{Board}!getLength@{getLength}}
+\index{getLength@{getLength}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
+{\footnotesize\ttfamily int Board\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie la longueur du plateau de jeu. 
+
+\begin{DoxyReturn}{Returns}
+La longueur du plateau de jeu. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a68ffdfc523eaba878e669205363ced9f}\label{class_board_a68ffdfc523eaba878e669205363ced9f}} 
+\index{Board@{Board}!getRow@{getRow}}
+\index{getRow@{getRow}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getRow()}{getRow()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_cell}{Cell}} $\ast$ $>$ Board\+::get\+Row (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})}
+
+
+
+Récupère une ligne spécifique du plateau de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Le numéro de la ligne à récupérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un vecteur de pointeurs de cellules représentant la ligne demandée. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a67905f3b441a8605aeb50d8978415aa0}\label{class_board_a67905f3b441a8605aeb50d8978415aa0}} 
+\index{Board@{Board}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily int Board\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renvoie la largeur du plateau de jeu. 
+
+\begin{DoxyReturn}{Returns}
+La largeur du plateau de jeu. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a4fddeec56ab1dc7250e210465a0b2bea}\label{class_board_a4fddeec56ab1dc7250e210465a0b2bea}} 
+\index{Board@{Board}!getZone@{getZone}}
+\index{getZone@{getZone}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getZone()}{getZone()}}
+{\footnotesize\ttfamily vector$<$ vector$<$ \mbox{\hyperlink{class_cell}{Cell}} $\ast$ $>$ $>$ Board\+::get\+Zone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_board_8hpp_a4e3ed68e1678c0e62d62a69b903720c8}{Zone}}}]{zone }\end{DoxyParamCaption})}
+
+
+
+Récupère une zone spécifique du plateau de jeu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zone} & La zone du plateau à récupérer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un vecteur 2D de pointeurs de cellules représentant la zone demandée. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_board_8hpp}{Board.\+hpp}}\item 
+\mbox{\hyperlink{_board_8cpp}{Board.\+cpp}}\end{DoxyCompactItemize}
