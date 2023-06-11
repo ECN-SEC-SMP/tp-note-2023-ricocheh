@@ -1,12 +1,17 @@
+/**
+ * @file Joueur.hpp
+ * @brief Définition de la classe Joueur.
+ */
+
 #include <iostream>
 #include "Joueur.hpp"
 
 /**
- * @brief Constructeur de la classe Joueur
+ * @brief Constructeur de la classe Joueur.
  * @overload
- * @param newName nom a attribuer a l'objet construit
- * @param newShortName surnom a attribuer a l'objet construit
-*/
+ * @param newName Le nom à attribuer à l'objet construit
+ * @param newShortName Le surnom à attribuer à l'objet construit
+ */
 Joueur::Joueur(string newName, string newShortName)
 {
     this->name = newName;
@@ -16,55 +21,55 @@ Joueur::Joueur(string newName, string newShortName)
 }
 
 /**
- * @brief Retourne le nombre coups restants de l'objet appelant cette methode
- * @return remStrokes, le nombre de coups restants du Joueur
-*/
+ * @brief Retourne le nombre de coups restants de l'objet appelant cette méthode.
+ * @return Le nombre de coups restants du joueur
+ */
 char Joueur::getRemStrokes()
 {
     return this->remStrokes;
 }
 
 /**
- * @brief Definit la valeur des coups restants du joueur
- * @param strokes nombre de coups a inscrire dans l'attribut "coups restants" de l'objet.
- * @return rien
-*/
+ * @brief Définit la valeur des coups restants du joueur.
+ * @param strokes Le nombre de coups à inscrire dans l'attribut "coups restants" de l'objet.
+ * @return Rien
+ */
 void Joueur::setRemStrokes(char strokes)
 {
     this->remStrokes = strokes;
 }
 
 /**
- * @brief Retourne le nom du Joueur
- * @return le nom du Joueur
-*/
+ * @brief Retourne le nom du joueur.
+ * @return Le nom du joueur
+ */
 string Joueur::getName()
 {
     return this->name;
 }
 
 /**
- * @brief Permet de definir le nom du Joueur
- * @param newName nom a definir
-*/
+ * @brief Permet de définir le nom du joueur.
+ * @param newName Le nom à définir
+ */
 void Joueur::setName(string newName)
 {
     this->name = newName;
 }
 
 /**
- * @brief Retourne le surnom du joueur
- * @return le surnom du Joueur
-*/
+ * @brief Retourne le surnom du joueur.
+ * @return Le surnom du joueur
+ */
 string Joueur::getShortName()
 {
     return this->shortName;
 }
 
 /**
- * @brief Permet de definir le surnom du Joueur
- * @param newShortName surnom a definir
-*/
+ * @brief Permet de définir le surnom du joueur.
+ * @param newShortName Le surnom à définir
+ */
 void Joueur::setShortName(string newShortName)
 {
     this->shortName = newShortName;

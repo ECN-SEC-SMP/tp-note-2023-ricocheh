@@ -24,7 +24,7 @@ Sablier::Sablier(int temps)
     this->secondes = temps * 1000;
     this->tempsEcoule = 0;
 }
-/******* STOP *******/
+
 /**
  * @brief Stop le sablier
  */
@@ -38,7 +38,6 @@ void Sablier::stop(void)
     }
 }
 
-/******* START *******/
 /**
  * @brief Lance le sablier
  */
@@ -54,7 +53,7 @@ void Sablier::start(void)
         cout << "Deja lance" << endl;
     }
 }
-/******* RESET *******/
+
 /**
  * @brief Remet à 0 le temps écoulé
  */
@@ -63,7 +62,6 @@ void Sablier::reset(void){
     tempsEcoule = 0;
 }
 
-/******* isActive *******/
 /**
  * @brief Donne l'état du sablier
  * @return vrai ou faux => ON / OFF

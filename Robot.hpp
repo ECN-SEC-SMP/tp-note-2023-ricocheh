@@ -1,6 +1,6 @@
 /**
  * @file Robot.hpp
- * @brief La déclaration de la classe Robot
+ * @brief La déclaration de la classe Robot.
  * ASSE Romain FERRE Cedric, PROCACCIA Paul, LEQUEUX Alexis
  * tp ricochet robots
  * @author Alexis LEQUEUX <alexis.lequeux@eleves.ec-nantes.fr>
@@ -16,31 +16,34 @@ using namespace std;
 
 /**
  * @enum Couleur
- * @brief Couleur possible que le robot peut avoir
+ * @brief Couleurs possibles pour le robot.
  */
 enum couleur{JAUNE, VERT, ROUGE, BLEU};
 
 /**
  * @enum Sens
- * @brief Différent sens dans lequel on peut déplacer le robot
+ * @brief Directions possibles pour le déplacement du robot.
  */
 enum sens{left, right, up, down};
 
 /**
- * @brief Déclaration de la classe Robot
+ * @class Robot
+ * @brief Déclaration de la classe Robot.
+ * @details La classe Robot représente un robot sur le plateau de jeu. Chaque robot a une position (x, y) et une couleur.
+ *          Elle fournit des fonctionnalités pour déplacer le robot et obtenir/modifier sa position.
  */
 class Robot
 {
-    private:
-        int positionX;
-        int positionY;
-        couleur color;
+private:
+    int positionX; /**< Position X du robot. */
+    int positionY; /**< Position Y du robot. */
+    couleur color; /**< Couleur du robot. */
 
-    public:
-        Robot(int x,int y, couleur couleurrobot, Board *b1);
-        void deplacement(sens direction, Board *b1);
-        int getX(void);
-        int getY(void);
-        void setX(int x, Board *b);
-        void setY(int y, Board *b);
+public:
+    Robot(int x, int y, couleur couleurrobot, Board *b1);
+    void deplacement(sens direction, Board *b1);
+    int getX(void);
+    int getY(void);
+    void setX(int x, Board *b);
+    void setY(int y, Board *b);
 };

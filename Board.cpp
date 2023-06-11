@@ -1,20 +1,21 @@
 /**
  * @file Board.cpp
- * @brief Contient le plateau de jeu
+ * @brief Contient l'implémentation de la classe Board.
  */
 
-/******* Native include *******/
+/******* Include natifs *******/
 
-/******* Project include ******/
+/******* Include du projet ******/
 #include "Board.hpp"
 
 /******* Espace de nommage ****/
 using namespace std;
 
-set<pair<int, int>> Board::wallsCoordinates;
+set<pair<int, int>> Board::wallsCoordinates;   //!< Coordonnées des murs sur le plateau de jeu.
 
 /**
- * @brief Renvoie la largeur du plateau
+ * @brief Renvoie la largeur du plateau de jeu.
+ * @return La largeur du plateau de jeu.
  */
 int Board::getWidth()
 {
@@ -22,13 +23,19 @@ int Board::getWidth()
 }
 
 /**
- * @brief Renvoie la longeur du plateau
+ * @brief Renvoie la longueur du plateau de jeu.
+ * @return La longueur du plateau de jeu.
  */
 int Board::getLength()
 {
-   return this->length;
+    return this->length;
 }
 
+/**
+ * @brief Constructeur de la classe Board.
+ * @param nb_row Le nombre de lignes du plateau.
+ * @param nb_col Le nombre de colonnes du plateau.
+ */
 Board::Board(int nb_row, int nb_col) : length(nb_row), width(nb_col)
 {
     for (int i = 0; i < nb_row; i++)
@@ -42,52 +49,62 @@ Board::Board(int nb_row, int nb_col) : length(nb_row), width(nb_col)
     }
 }
 
+/**
+ * @brief Destructeur de la classe Board.
+ */
 Board::~Board()
 {
 
 }
 
+/**
+ * @brief Récupère la cellule à partir de ses coordonnées.
+ * @param x La coordonnée x de la cellule.
+ * @param y La coordonnée y de la cellule.
+ * @return Un pointeur vers la cellule correspondante.
+ */
 Cell* Board::getCell(int x, int y)
 {
     return &matrice[x][y];
 }
 
-/*
- * Si srictement supérieur à 3 et 3, renvoi les 4 cases du milieu
- * Si impair, arrondi inférieur
-*/
-vector<vector<Cell *>> Board::getZone(Zone zone)
+/**
+ * @brief Récupère une zone spécifique du plateau de jeu.
+ * @param zone La zone du plateau à récupérer.
+ * @return Un vecteur 2D de pointeurs de cellules représentant la zone demandée.
+ */
+vector<vector<Cell*>> Board::getZone(Zone zone)
 {
-    vector<vector<Cell* >> cell_zone;
+    vector<vector<Cell*>> cell_zone;
     int start_row, end_row, start_col, end_col;
 
     switch(zone)
     {
-        case (CENTER):
+        case CENTER:
             start_row = (length / 2) - 1;
             start_col = (width / 2) - 1;
             end_row = length / 2;
             end_col = width / 2;
             break;
-        case (TOP_LEFT):
+        case TOP_LEFT:
             start_row = 0;
             start_col = 0;
             end_row = (length / 2) - 1;
             end_col = (width / 2) - 1;
             break;
-        case (TOP_RIGHT):
+        case TOP_RIGHT:
             start_row = 0;
             start_col = width / 2;
             end_row = length - 1;
             end_col = width - 1;
             break;
-        case (BOTTOM_LEFT):
+        case BOTTOM_LEFT:
             start_row = length / 2;
             start_col = 0;
             end_row = length - 1;
             end_col = (width / 2) - 1;
             break;
-        case (BOTTOM_RIGHT):
+        case BOTTOM_RIGHT:
             start_row = length / 2;
             start_col = width / 2;
             end_row = length - 1;
@@ -97,7 +114,7 @@ vector<vector<Cell *>> Board::getZone(Zone zone)
 
     for(int x = start_row; x <= end_row; x++)
     {
-        vector<Cell *> row;
+        vector<Cell*> row;
         for(int y = start_col; y <= end_col; y++)
         {
             row.push_back(&matrice[x][y]);
@@ -108,13 +125,18 @@ vector<vector<Cell *>> Board::getZone(Zone zone)
     return cell_zone;
 }
 
-vector<Cell *> Board::getCol(int col)
+/**
+ * @brief Récupère une colonne spécifique du plateau de jeu.
+ * @param col Le numéro de la colonne à récupérer.
+ * @return Un vecteur de pointeurs de cellules représentant la colonne demandée.
+ */
+vector<Cell*> Board::getCol(int col)
 {
-    vector<Cell *> col_copy;
+    vector<Cell*> col_copy;
 
-    for(long unsigned int x = 0; x < matrice.size(); x++)
+    for(size_t x = 0; x < matrice.size(); x++)
     {
-        for(long unsigned int y = 0; y < matrice[x].size(); y++)
+        for(size_t y = 0; y < matrice[x].size(); y++)
         {
             col_copy.push_back(&matrice[x][col]);
         }
@@ -123,11 +145,16 @@ vector<Cell *> Board::getCol(int col)
     return col_copy;
 }
 
-vector<Cell *> Board::getRow(int row)
+/**
+ * @brief Récupère une ligne spécifique du plateau de jeu.
+ * @param row Le numéro de la ligne à récupérer.
+ * @return Un vecteur de pointeurs de cellules représentant la ligne demandée.
+ */
+vector<Cell*> Board::getRow(int row)
 {
-    vector<Cell *> row_copy;
+    vector<Cell*> row_copy;
 
-    for(long unsigned int x = 0; x < matrice[row].size(); x++)
+    for(size_t x = 0; x < matrice[row].size(); x++)
     {
         row_copy.push_back(&matrice[row][x]);
     }

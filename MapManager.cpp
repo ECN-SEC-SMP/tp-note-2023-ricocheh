@@ -14,23 +14,29 @@ using namespace std;
 
 MapManager* MapManager::instance = NULL;
 
+/**
+ * @brief Obtient l'instance unique de la classe MapManager.
+ * @return L'instance unique de MapManager.
+ */
 MapManager* MapManager::getInstance()
 {
-    cout << "TODO initialiser le pointeur à null" << endl;
     if (!instance)
         instance = new MapManager;
     return instance;
 }
 
+/**
+ * @brief Constructeur par défaut de la classe MapManager.
+ */
 MapManager::MapManager()
 {
 
 }
 
 /**
- *@brief Affiche le plateau de jeu dans un terminal avec le contenu des cellules (robot, murs, rien ... etc)
- *@param b1 Plateau de jeu à afficher
-*/
+ * @brief Affiche le plateau de jeu dans un terminal avec le contenu des cellules (robot, murs, rien ... etc).
+ * @param board Le plateau de jeu à afficher.
+ */
 void MapManager::displayBoard(Board board) const
 {
     // Recuperation des dimensions du plateau pour pouvoir iterer sur les colonnes et les lignes
@@ -87,6 +93,12 @@ void MapManager::displayBoard(Board board) const
     }
 }
 
+/**
+ * @brief Charge un plateau de jeu avec le nombre de lignes et de colonnes spécifiées.
+ * @param nb_row Le nombre de lignes du plateau.
+ * @param nb_col Le nombre de colonnes du plateau.
+ * @return Le plateau de jeu chargé.
+ */
 Board MapManager::loadBoard(int nb_row, int nb_col) const
 {
     cout << "Fonction loadBoard" << endl;
@@ -99,6 +111,10 @@ Board MapManager::loadBoard(int nb_row, int nb_col) const
     return board;
 }
 
+/**
+ * @brief Ajoute les murs de limite du plateau de jeu.
+ * @param board Le plateau de jeu.
+ */
 void MapManager::addBoardLimit(Board* board) const
 {
     for (auto& cell : board->getCol(0))
@@ -122,6 +138,10 @@ void MapManager::addBoardLimit(Board* board) const
     }
 }
 
+/**
+ * @brief Ajoute les murs du centre du plateau de jeu.
+ * @param board Le plateau de jeu.
+ */
 void MapManager::addBoardCenter(Board* board) const
 {
     vector<vector<Cell *>> cells = board->getZone(CENTER);
@@ -140,6 +160,10 @@ void MapManager::addBoardCenter(Board* board) const
     }
 }
 
+/**
+ * @brief Ajoute 2 murs aléatoires sur le plateau de jeu.
+ * @param board Le plateau de jeu.
+ */
 void MapManager::add2RandomWall(Board* board) const
 {
     srand(time(nullptr));

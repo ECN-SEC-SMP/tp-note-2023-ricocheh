@@ -15,13 +15,13 @@ using namespace std;
 /**
  * @brief Déclaration de la classe Sablier
  */
-class Sablier 
+class Sablier
 {
     private:
-        int secondes;
-        int tempsEcoule;
-        chrono::steady_clock::time_point tempsDepart;
-        bool actif;
+        int secondes; /**< Temps en secondes */
+        int tempsEcoule; /**< Temps écoulé en millisecondes */
+        chrono::steady_clock::time_point tempsDepart; /**< Moment du lancement du sablier */
+        bool actif; /**< État du sablier (activé ou désactivé) */
 
     public:
         Sablier(int temps);

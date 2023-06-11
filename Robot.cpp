@@ -1,9 +1,9 @@
 /**
  * @file Robot.cpp
- * @brief Implémentation de la classe Robot
+ * @brief Implémentation de la classe Robot.
  * ASSE Romain FERRE Cedric, PROCACCIA Paul, LEQUEUX Alexis
  * tp ricochet robots
- * @author Alexis LEQUEUX <alexis.lequeux@eleves.ec-nantes.fr>
+ * author Alexis LEQUEUX <alexis.lequeux@eleves.ec-nantes.fr>
  */
 
 /******* Native include *******/
@@ -18,25 +18,25 @@ using namespace std;
 
 //************Constructeur************
 /**
- * @brief Positionne le robot, enregistre la couleur, occupe une case du plateau de jeu
- * @param x choix de la colonne du jeu
- * @param y choix de la ligne du jeu
- * @param couleur choix de la couleur du robot
- * @param gameBoard passage de l'adresse du plateau de jeu
+ * @brief Positionne le robot, enregistre la couleur, occupe une case du plateau de jeu.
+ * @param x Choix de la colonne du jeu.
+ * @param y Choix de la ligne du jeu.
+ * @param couleurrobot Choix de la couleur du robot.
+ * @param b1 Pointeur vers le plateau de jeu.
  */
 Robot::Robot(int x, int y, couleur couleurrobot, Board *b1)
 {
     this->positionX = x;
     this->positionY = y;
     this->color = couleurrobot;
-    Cell* updated; 
+    Cell* updated;
     updated = b1->getCell(y, x);
     updated->setTaken(true);
 }
 
 /**
- * @brief permet de recuperer la colonne du robot
- * @return colonne du robot
+ * @brief Permet de récupérer la colonne du robot.
+ * @return Colonne du robot.
  */
 int Robot::getX(void)
 {
@@ -44,8 +44,8 @@ int Robot::getX(void)
 }
 
 /**
- * @brief permet de recuperer la ligne du robot
- * @return ligne du robot
+ * @brief Permet de récupérer la ligne du robot.
+ * @return Ligne du robot.
  */
 int Robot::getY(void)
 {
@@ -53,9 +53,9 @@ int Robot::getY(void)
 }
 
 /**
- * @brief permet de mettre le robot à une colonne précise du jeu. MàJ du statut occuppé.
- * @param x choix de la colonne du jeu
- * @param b adresse de la board du jeu
+ * @brief Permet de définir la colonne du robot dans le jeu. Met à jour le statut d'occupation.
+ * @param x Choix de la colonne du jeu.
+ * @param b Adresse du plateau de jeu.
  */
 void Robot::setX(int x, Board *b)
 { 
@@ -71,9 +71,9 @@ void Robot::setX(int x, Board *b)
 }
 
 /**
- * @brief permet de mettre le robot à une ligne précise du jeu. MàJ du statut occuppé.
- * @param y choix de la ligne du jeu
- * @param b adresse de la board du jeu
+ * @brief Permet de définir la ligne du robot dans le jeu. Met à jour le statut d'occupation.
+ * @param y Choix de la ligne du jeu.
+ * @param b Adresse du plateau de jeu.
  */
 void Robot::setY(int y,Board *b)
 {
@@ -89,9 +89,9 @@ void Robot::setY(int y,Board *b)
 }
 
 /**
- * @brief permet de deplacer le robot dans une des 4 directions. MàJ du statut occuppé.
- * @param direction left right up down
- * @param b1 adresse de la board du jeux 
+ * @brief Permet de déplacer le robot dans l'une des 4 directions. Met à jour le statut d'occupation.
+ * @param direction Direction de déplacement (left, right, up, down).
+ * @param b1 Adresse du plateau de jeu.
  */
 void Robot::deplacement(sens direction, Board *b1)
 {
