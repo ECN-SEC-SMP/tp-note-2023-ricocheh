@@ -193,4 +193,16 @@ Dans ce projet, 4 robots sont présents. Ces robots peuvent se déplacer dans qu
     
 Pour répondre à ce cahier des charges, nous avons créé une classe Robot qui permet d'instancier les quatre robots. Dans cette classe, il y a deux méthodes qui permettent de savoir quelle sont les positions X et Y, deux méthodes qui mettent à jour les positions que ça soit en X ou en Y tout en mettant à jour le statut d'occupation sur le plateau de jeu. Pour finir, nous avosn créé une méthode déplacement qui a pour objectif de déplacer un robot dans une des quatre directions possibles selon le choix effectué par le joueur. Pour ce faire, la fonction passe de case en case et s'assure de pouvoir les traverser en fonction des murs et des robots présents sur les cases qu'il parcoure.
     
- 
+### Classe Joueur
+   
+Cette classe est utilisée pour créer et gérer les joueurs qui intéragissent avec le jeu.
+Les joueurs ont un prénom et un surnom. Chaque joueur annonce une estimation d'un nombre de coups nécéssaires pour gagner la manche, ce nombre de coup est donc propre au joueur et son accès est rendu possible par un accesseur.
+
+Cette classe comporte des accesseurs sur le prénom, le surnom et le nombre de coups. De même, elle comporte des mutateurs sur le prénom, le surnom et le nombre de coups.
+Elle comporte également une méthode *chooseRemStrokes()* qui permet de demander au joueur son estimation et qui utilise *setRemStrokes()* pour renseigner la donnée dans l'attribut *remStrokes* de l'objet courant.
+
+### Classe MapManager
+    
+Cette classe est utilisée pour faire des opérations sur le plateau et nottament pour l'afficher au travers de la fonction *displayBoard()*.
+    
+Cette classe comporte un constructeur privé pour empecher plusieurs instanciations de l'objet MapManager. A la place on utilise un pointeur sur MapManager qui est *static* afin d'avoir un MapManager commun pour tous les objets. On y retrouve donc également un accesseur sur le pointeur instance qui permet d'accéder à cette instance unique de MapManager. Enfin cette classe comporte les méthodes *loadBoard()* qui permet de charger un plateau et de lui ajouter des murs et des robots, *displayBoard()* qui affiche le plateau avec les murs et les robots qu'il contient dans un terminal, et *addBoardLimit()* qui pose des murs sous tout le pourtour du plateau de jeu.
