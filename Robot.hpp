@@ -6,9 +6,10 @@
  * @author Alexis LEQUEUX <alexis.lequeux@eleves.ec-nantes.fr>
  */
 
+#include "Board.hpp"
+
 /******* Native include *******/
 #include <iostream>
-#include "Board.hpp"
 
 /******* Espace de nommage ****/
 using namespace std;

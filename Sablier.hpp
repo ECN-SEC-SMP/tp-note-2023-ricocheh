@@ -8,6 +8,7 @@
 
 /******* Native include *******/
 #include <iostream>
+#include <chrono>
 /******* Espace de nommage ****/
 using namespace std;
 

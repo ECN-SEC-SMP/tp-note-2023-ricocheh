@@ -13,12 +13,6 @@
 #include "Sablier.hpp"
 
 /******* Espace de nommage ****/
-using namespace std;
-
-/******* Librairie de temps ****/
-#include <chrono>
-#include <thread>
-
 
 /******* Constructeur *******/
 /**
