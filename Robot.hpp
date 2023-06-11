@@ -18,7 +18,7 @@ using namespace std;
  * @enum Couleur
  * @brief Couleur possible que le robot peut avoir
  */
-enum couleur{jaune, vert, rouge, bleu};
+enum couleur{JAUNE, VERT, ROUGE, BLEU};
 
 /**
  * @enum Sens

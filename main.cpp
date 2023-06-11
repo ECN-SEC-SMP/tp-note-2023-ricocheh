@@ -12,24 +12,26 @@
 #include "Joueur.hpp"
 #include "Sablier.hpp"
 #include "MapManager.hpp"
+#include "Robot.hpp"
 
 /******* Espace de nommage ****/
 using namespace std;
 
 int main()
 {
-    Joueur J1 = Joueur("Robert", "Rob");
+    Joueur j1 = Joueur("Robert", "Rob");
+    Joueur j2 = Joueur("David", "Dav");
 
-    Board b1 = MapManager::getInstance()->loadBoard(16, 16);
+    Board board = MapManager::getInstance()->loadBoard(16, 16);
+    Robot yel = Robot(2, 5, JAUNE, &board);
+    Robot red = Robot(13, 14, ROUGE, &board);
 
-    MapManager::getInstance()->displayBoard(b1);
+    //la mécanique des robots est partiellement implémentée, malheuresement nous manquons de temps pour l'intégrer à nos tests.
+
+    MapManager::getInstance()->displayBoard(board);
 
     Sablier s1(15);
     s1.start();
-    if(s1.isActive())
-    {
-        cout << "Le Timer est actif" << endl;
-    }
-    while(s1.isActive());
-    cout<<"FINITO"<<endl;
+
+    return 0;
 }
