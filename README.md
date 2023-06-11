@@ -179,6 +179,21 @@ void Exemple::copy(const int &a1, int &a2, int *a3)
 ```
 ## Choix technique
 
+Dans un premier temps, définissons les besoins fonctionnels de notre projet:
+![Diagramme de cas d'utilisation](./UseCaseRicocheh.drawio.png "Diagramme de cas d'utilisation")
+
+Pour respecter le cahier des charges, notre main respectera la séquence ci dessous.
+
+![Diagramme de flux](./diagramme_de_flux.jpg "Diagramme de flux du projet")
+
+
+Afin de mieux s'organiser en équipe, nous avons préalablement découpé notre projet pour diviser le travail.
+Voici le diagramme de classe de notre projet.
+![Diagramme de classe](./ClassDiagram.jpg "Diagramme de classe du projet")
+
+
+
+
 ### Classe Sablier
 
 Cette classe est utilisée pour la gestion du temps dans le jeu. Elle utilise la librairie <Chrono>. 
@@ -205,4 +220,4 @@ Elle comporte également une méthode *chooseRemStrokes()* qui permet de demande
     
 Cette classe est utilisée pour faire des opérations sur le plateau et nottament pour l'afficher au travers de la fonction *displayBoard()*.
     
-Cette classe comporte un constructeur privé pour empecher plusieurs instanciations de l'objet MapManager. A la place on utilise un pointeur sur MapManager qui est *static* afin d'avoir un MapManager commun pour tous les objets. On y retrouve donc également un accesseur sur le pointeur instance qui permet d'accéder à cette instance unique de MapManager. Enfin cette classe comporte les méthodes *loadBoard()* qui permet de charger un plateau et de lui ajouter des murs et des robots, *displayBoard()* qui affiche le plateau avec les murs et les robots qu'il contient dans un terminal, et *addBoardLimit()* qui pose des murs sous tout le pourtour du plateau de jeu.
+Cette classe comporte un constructeur privé pour empecher plusieurs instanciations de l'objet MapManager. A la place on utilise un pointeur sur MapManager qui est *static* afin d'avoir un MapManager commun pour tous les objets (cela n'a pas de sens d'avoir plusieurs instance de ce composant). On y retrouve donc également un accesseur sur le pointeur instance qui permet d'accéder à cette instance unique de MapManager. Enfin cette classe comporte les méthodes *loadBoard()* qui permet de charger un plateau et de lui ajouter des murs et des robots, *displayBoard()* qui affiche le plateau avec les murs et les robots qu'il contient dans un terminal, et *addBoardLimit()* qui pose des murs sous tout le pourtour du plateau de jeu.
