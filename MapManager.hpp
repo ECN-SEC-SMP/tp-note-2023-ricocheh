@@ -25,5 +25,5 @@ class MapManager
     public:
         static MapManager* getInstance();
         Board loadBoard(int nb_row, int nb_col) const;
-        void renderBoard() const;
+        void displayBoard(Board board) const;
 };

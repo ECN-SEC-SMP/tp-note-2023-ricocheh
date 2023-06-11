@@ -27,9 +27,64 @@ MapManager::MapManager()
 
 }
 
-void MapManager::renderBoard() const
+/**
+ *@brief Affiche le plateau de jeu dans un terminal avec le contenu des cellules (robot, murs, rien ... etc)
+ *@param b1 Plateau de jeu à afficher
+*/
+void MapManager::displayBoard(Board board) const
 {
-    cout << "Fonction renderBoard" << endl;
+    // Recuperation des dimensions du plateau pour pouvoir iterer sur les colonnes et les lignes
+    int width = board.getWidth();
+    int length = board.getLength();
+
+    for (int row = 0; row < length; ++row)
+    {
+        // Affiche la partie horizontale haute de chaque cellule
+        for (int col = 0; col < width; ++col)
+        {
+            cout << "+";
+            const Cell* cell = board.getCell(row, col);
+            if (cell->isWalled(Cell::WALL_UP))
+                cout << "----";
+            else
+                cout << "    ";
+        }
+        cout << "+" << endl;
+
+        // Affiche le contenu de chaque cellule (robot, murs verticaux ou horizontaux)
+        for (int col = 0; col < width; ++col)
+        {
+            const Cell* cell = board.getCell(row, col);
+            if (cell->isWalled(Cell::WALL_LEFT))
+                cout << "|";
+            else
+                cout << " ";
+
+            // Affiche un robot si la cellule est occupée
+            if (cell->isTaken())
+                cout << " R ";
+            else
+                cout << "   ";
+
+            if (cell->isWalled(Cell::WALL_RIGHT))
+                cout << "|";
+            else
+                cout << " ";
+        }
+        cout << endl;
+
+        // Affiche la partie horizontale basse de chaque cellule
+        for (int col = 0; col < width; ++col)
+        {
+            cout << "+";
+            const Cell* cell = board.getCell(row, col);
+            if (cell->isWalled(Cell::WALL_DOWN))
+                cout << "----";
+            else
+                cout << "    ";
+        }
+        cout << "+" << endl;
+    }
 }
 
 Board MapManager::loadBoard(int nb_row, int nb_col) const
@@ -75,7 +130,12 @@ void MapManager::addBoardCenter(Board* board) const
     {
         for (long unsigned int y = 0; y < cells[x].size(); y++)
         {
-            cells[x][y]->addWall(Cell::WALL_UP || Cell::WALL_DOWN || Cell::WALL_LEFT || Cell::WALL_RIGHT);
+            int dir = (Cell::WALL_UP || Cell::WALL_DOWN || Cell::WALL_LEFT || Cell::WALL_RIGHT);
+            cout << "x: " << x << " et y: " << y << "dir: " <<  dir << endl;
+            cells[x][y]->addWall(Cell::WALL_UP);
+            cells[x][y]->addWall(Cell::WALL_DOWN);
+            cells[x][y]->addWall(Cell::WALL_LEFT);
+            cells[x][y]->addWall(Cell::WALL_RIGHT);
         }
     }
 }

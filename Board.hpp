@@ -47,4 +47,6 @@ class Board
         vector<Cell *> getCol(int col);
         vector<Cell *> getRow(int row);
         static set<pair<int, int>> wallsCoordinates;
+        int getLength();
+        int getWidth();
 };

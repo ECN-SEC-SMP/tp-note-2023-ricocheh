@@ -22,15 +22,7 @@ int main()
 
     Board b1 = MapManager::getInstance()->loadBoard(16, 16);
 
-    /*for (int x = 0; x < 16; x++)
-    {
-        for (int y = 0; y < 16; y++)
-        {
-            cout << b1.getCell(x, y)->getWalls() << endl;
-        }
-    }*/
-
-    cout << "Hello World!" << endl;
+    MapManager::getInstance()->displayBoard(b1);
 
     Sablier s1(15);
     s1.start();

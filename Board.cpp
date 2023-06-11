@@ -13,6 +13,22 @@ using namespace std;
 
 set<pair<int, int>> Board::wallsCoordinates;
 
+/**
+ * @brief Renvoie la largeur du plateau
+ */
+int Board::getWidth()
+{
+    return this->width;
+}
+
+/**
+ * @brief Renvoie la longeur du plateau
+ */
+int Board::getLength()
+{
+   return this->length;
+}
+
 Board::Board(int nb_row, int nb_col) : length(nb_row), width(nb_col)
 {
     for (int i = 0; i < nb_row; i++)
