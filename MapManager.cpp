@@ -74,11 +74,8 @@ void MapManager::displayBoard(Board b1)
                 cout << " ";
         }
         cout << endl;
-    }
 
-    // Affiche la partie horizontale basse de chaque cellule
-    for (int row = 0; row < length; ++row)
-    {
+        // Affiche la partie horizontale basse de chaque cellule
         for (int col = 0; col < width; ++col)
         {
             cout << "+";
