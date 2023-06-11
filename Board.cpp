@@ -11,6 +11,8 @@
 /******* Espace de nommage ****/
 using namespace std;
 
+set<pair<int, int>> Board::wallsCoordinates;
+
 Board::Board(int nb_row, int nb_col) : length(nb_row), width(nb_col)
 {
     for (int i = 0; i < nb_row; i++)

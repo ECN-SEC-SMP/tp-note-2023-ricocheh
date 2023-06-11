@@ -6,6 +6,7 @@
 
 /******* Native include *******/
 #include <vector>
+#include <set>
 
 /******* Project include ******/
 #include "Cell.hpp"
@@ -45,4 +46,5 @@ class Board
         vector<vector<Cell *>> getZone(Zone zone);
         vector<Cell *> getCol(int col);
         vector<Cell *> getRow(int row);
+        static set<pair<int, int>> wallsCoordinates;
 };

@@ -27,10 +27,10 @@ class Cell
 
     public:
         static const int WALL_EMPTY = 0;
-        static const int WALL_LEFT = (1 << 1);
-        static const int WALL_RIGHT = (1 << 2);
-        static const int WALL_UP = (1 << 3);
-        static const int WALL_DOWN = (1 << 4);
+        static const int WALL_LEFT = 1;
+        static const int WALL_RIGHT = (1 << 1);
+        static const int WALL_UP = (1 << 2);
+        static const int WALL_DOWN = (1 << 3);
         Cell();
         ~Cell();
 

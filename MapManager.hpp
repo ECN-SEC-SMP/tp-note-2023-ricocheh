@@ -18,6 +18,9 @@ class MapManager
         static MapManager *instance;
         MapManager(); //Constructeur privé pour empecher l'instance
         void addBoardLimit(Board *board) const;
+        void addBoardCenter(Board* board) const;
+        void add2RandomWall(Board* board) const; //2
+        void add2RandomCorner(Board* board) const; //2
 
     public:
         static MapManager* getInstance();
