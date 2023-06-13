@@ -22,7 +22,7 @@ private:
     void addBoardLimit(Board *board) const;
     void addBoardCenter(Board* board) const;
     void addRandomWall(Board* board, Zone zone, WallDirection dir) const;
-    void add2RandomCorner(Board* board) const;
+    void addRandomCorner(Board* board, Zone zone) const;
 
 public:
     static MapManager* getInstance();

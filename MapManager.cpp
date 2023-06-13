@@ -115,6 +115,15 @@ Board MapManager::loadBoard(int nb_row, int nb_col) const
     addRandomWall(&board, BOTTOM_RIGHT, HORYZONTAL);
     addRandomWall(&board, BOTTOM_RIGHT, VERTICAL);
 
+    addRandomCorner(&board, TOP_LEFT);
+    addRandomCorner(&board, TOP_LEFT);
+    addRandomCorner(&board, TOP_RIGHT);
+    addRandomCorner(&board, TOP_RIGHT);
+    addRandomCorner(&board, BOTTOM_LEFT);
+    addRandomCorner(&board, BOTTOM_LEFT);
+    addRandomCorner(&board, BOTTOM_RIGHT);
+    addRandomCorner(&board, BOTTOM_RIGHT);
+
     return board;
 }
 
@@ -168,6 +177,8 @@ void MapManager::addBoardCenter(Board* board) const
 /**
  * @brief Ajoute 2 murs aléatoires sur le plateau de jeu.
  * @param board Le plateau de jeu.
+ * @param zone La zone du plateau de jeu
+ * @param dir la direction du mur à poser
  */
 void MapManager::addRandomWall(Board *board, Zone zone, WallDirection dir) const
 {
@@ -195,6 +206,65 @@ void MapManager::addRandomWall(Board *board, Zone zone, WallDirection dir) const
     } while(!ret.second);
 
     int direction = (dir == VERTICAL) ? 1 << (rand() % 2) : 1 << ((rand() % 2) + 2);
+    area[xx][yy]->addWall(direction);
+    for (int x = -1; x < 2; x++)
+    {
+        for (int y = -1; y < 2; y++)
+        {
+            pair<int, int> forecast(xx + x , yy + y);
+            if (zone == TOP_LEFT)
+                ret = Board::wallsCoordinatesTl.insert(forecast);
+            else if (zone == TOP_RIGHT)
+                ret = Board::wallsCoordinatesTr.insert(forecast);
+            else if (zone == BOTTOM_LEFT)
+                ret = Board::wallsCoordinatesBl.insert(forecast);
+            else
+                ret = Board::wallsCoordinatesBr.insert(forecast);
+        }
+    }
+}
+
+/**
+ * @brief Ajoute des angles sur une zone spécifique du plateau de jeu
+ * @param board Le plateau de jeu.
+ * @param zone La zone du plateau de jeu
+ */
+void MapManager::addRandomCorner(Board *board, Zone zone) const
+{
+    srand(time(nullptr));
+    pair<set<pair<int, int>>::iterator,bool> ret;
+
+    vector<vector<Cell *>> area = board->getZone(zone);
+
+    int xx;
+    int yy;
+
+    do
+    {
+        xx = rand() % area.size();
+        yy = rand() % area[0].size();
+        pair<int, int> intCoordinate(xx , yy);
+        if (zone == TOP_LEFT)
+            ret = Board::wallsCoordinatesTl.insert(intCoordinate);
+        else if (zone == TOP_RIGHT)
+            ret = Board::wallsCoordinatesTr.insert(intCoordinate);
+        else if (zone == BOTTOM_LEFT)
+            ret = Board::wallsCoordinatesBl.insert(intCoordinate);
+        else
+            ret = Board::wallsCoordinatesBr.insert(intCoordinate);
+    } while(!ret.second);
+
+    int dir = rand() % 4;
+    int direction = 0;
+    if (dir == 0)
+        direction = 0b1001;
+    else if (dir == 1)
+        direction = 0b0101;
+    else if (dir == 2)
+        direction = 0b1010;
+    else
+        direction = 0b0110;
+
     area[xx][yy]->addWall(direction);
     for (int x = -1; x < 2; x++)
     {
