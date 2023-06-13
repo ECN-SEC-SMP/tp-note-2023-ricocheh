@@ -9,6 +9,18 @@
 #pragma once
 
 /**
+ * @enum WallDirection
+ * @brief Représente les différents directions de mur
+ *        HORYZONTAL : Mur horyzontal
+ *        RED : Mur vertical
+ */
+enum WallDirection
+{
+	HORYZONTAL = 0,
+    VERTICAL
+};
+
+/**
  * @enum Objective
  * @brief Représente les différents objectifs possibles pour une cellule.
  *        NONE : Aucun objectif

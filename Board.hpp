@@ -51,7 +51,19 @@ public:
     int getWidth();
 
     /**
-     * @brief Coordonnées des murs sur le plateau de jeu.
+     * @brief Coordonnées des murs sur le plateau de jeu (Haut gauche)
      */
-    static set<pair<int, int>> wallsCoordinates;
+    static set<pair<int, int>> wallsCoordinatesTl;
+    /**
+     * @brief Coordonnées des murs sur le plateau de jeu (Haut droit)
+     */
+    static set<pair<int, int>> wallsCoordinatesTr;
+    /**
+     * @brief Coordonnées des murs sur le plateau de jeu (bas gauche)
+     */
+    static set<pair<int, int>> wallsCoordinatesBl;
+    /**
+     * @brief Coordonnées des murs sur le plateau de jeu (Bas droit)
+     */
+    static set<pair<int, int>> wallsCoordinatesBr;
 };

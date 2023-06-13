@@ -106,7 +106,14 @@ Board MapManager::loadBoard(int nb_row, int nb_col) const
 
     addBoardLimit(&board);
     addBoardCenter(&board);
-    add2RandomWall(&board);
+    addRandomWall(&board, TOP_LEFT, HORYZONTAL);
+    addRandomWall(&board, TOP_LEFT, VERTICAL);
+    addRandomWall(&board, TOP_RIGHT, HORYZONTAL);
+    addRandomWall(&board, TOP_RIGHT, VERTICAL);
+    addRandomWall(&board, BOTTOM_LEFT, HORYZONTAL);
+    addRandomWall(&board, BOTTOM_LEFT, VERTICAL);
+    addRandomWall(&board, BOTTOM_RIGHT, HORYZONTAL);
+    addRandomWall(&board, BOTTOM_RIGHT, VERTICAL);
 
     return board;
 }
@@ -150,8 +157,6 @@ void MapManager::addBoardCenter(Board* board) const
     {
         for (long unsigned int y = 0; y < cells[x].size(); y++)
         {
-            int dir = (Cell::WALL_UP || Cell::WALL_DOWN || Cell::WALL_LEFT || Cell::WALL_RIGHT);
-            cout << "x: " << x << " et y: " << y << "dir: " <<  dir << endl;
             cells[x][y]->addWall(Cell::WALL_UP);
             cells[x][y]->addWall(Cell::WALL_DOWN);
             cells[x][y]->addWall(Cell::WALL_LEFT);
@@ -164,61 +169,46 @@ void MapManager::addBoardCenter(Board* board) const
  * @brief Ajoute 2 murs aléatoires sur le plateau de jeu.
  * @param board Le plateau de jeu.
  */
-void MapManager::add2RandomWall(Board* board) const
+void MapManager::addRandomWall(Board *board, Zone zone, WallDirection dir) const
 {
     srand(time(nullptr));
-    vector<vector<Cell *>> cellsTl = board->getZone(TOP_LEFT);
-    vector<vector<Cell *>> cellsTr = board->getZone(TOP_RIGHT);
-    vector<vector<Cell *>> cellsBl = board->getZone(BOTTOM_LEFT);
-    vector<vector<Cell *>> cellsBr = board->getZone(BOTTOM_RIGHT);
     pair<set<pair<int, int>>::iterator,bool> ret;
+
+    vector<vector<Cell *>> area = board->getZone(zone);
 
     int xx;
     int yy;
 
-    //Ajout d'un mur vertical
     do
     {
-        xx = rand() % cellsTl.size();
-        yy = rand() % cellsTl[0].size();
+        xx = rand() % area.size();
+        yy = rand() % area[0].size();
         pair<int, int> intCoordinate(xx , yy);
-        ret = Board::wallsCoordinates.insert(intCoordinate);
+        if (zone == TOP_LEFT)
+            ret = Board::wallsCoordinatesTl.insert(intCoordinate);
+        else if (zone == TOP_RIGHT)
+            ret = Board::wallsCoordinatesTr.insert(intCoordinate);
+        else if (zone == BOTTOM_LEFT)
+            ret = Board::wallsCoordinatesBl.insert(intCoordinate);
+        else
+            ret = Board::wallsCoordinatesBr.insert(intCoordinate);
     } while(!ret.second);
 
-    int direction = 1 << (rand() % 2);
-    cellsTl[xx][yy]->addWall(direction);
-    cellsTr[xx][yy]->addWall(direction);
-    cellsBl[xx][yy]->addWall(direction);
-    cellsBr[xx][yy]->addWall(direction);
+    int direction = (dir == VERTICAL) ? 1 << (rand() % 2) : 1 << ((rand() % 2) + 2);
+    area[xx][yy]->addWall(direction);
     for (int x = -1; x < 2; x++)
     {
         for (int y = -1; y < 2; y++)
         {
             pair<int, int> forecast(xx + x , yy + y);
-            Board::wallsCoordinates.insert(forecast);
-        }
-    }
-
-    //Ajout d'un mur Horizontal
-    do
-    {
-        xx = rand() % cellsTl.size();
-        yy = rand() % cellsTl[0].size();
-        pair<int, int> intCoordinate(xx , yy);
-        ret = Board::wallsCoordinates.insert(intCoordinate);
-    } while(!ret.second);
-
-    direction = 1 << ((rand() % 2) + 2);
-    cellsTl[xx][yy]->addWall(direction);
-    cellsTr[xx][yy]->addWall(direction);
-    cellsBl[xx][yy]->addWall(direction);
-    cellsBr[xx][yy]->addWall(direction);
-    for (int x = -1; x < 2; x++)
-    {
-        for (int y = -1; y < 2; y++)
-        {
-            pair<int, int> forecast(xx + x , yy + y);
-            Board::wallsCoordinates.insert(forecast);
+            if (zone == TOP_LEFT)
+                ret = Board::wallsCoordinatesTl.insert(forecast);
+            else if (zone == TOP_RIGHT)
+                ret = Board::wallsCoordinatesTr.insert(forecast);
+            else if (zone == BOTTOM_LEFT)
+                ret = Board::wallsCoordinatesBl.insert(forecast);
+            else
+                ret = Board::wallsCoordinatesBr.insert(forecast);
         }
     }
 }

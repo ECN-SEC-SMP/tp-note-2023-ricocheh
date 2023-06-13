@@ -21,7 +21,7 @@ private:
     MapManager(); // Constructeur privé pour empêcher l'instanciation directe.
     void addBoardLimit(Board *board) const;
     void addBoardCenter(Board* board) const;
-    void add2RandomWall(Board* board) const;
+    void addRandomWall(Board* board, Zone zone, WallDirection dir) const;
     void add2RandomCorner(Board* board) const;
 
 public:

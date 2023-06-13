@@ -11,7 +11,10 @@
 /******* Espace de nommage ****/
 using namespace std;
 
-set<pair<int, int>> Board::wallsCoordinates;   //!< Coordonnées des murs sur le plateau de jeu.
+set<pair<int, int>> Board::wallsCoordinatesTl;
+set<pair<int, int>> Board::wallsCoordinatesTr;
+set<pair<int, int>> Board::wallsCoordinatesBl;
+set<pair<int, int>> Board::wallsCoordinatesBr;
 
 /**
  * @brief Renvoie la largeur du plateau de jeu.
@@ -95,7 +98,7 @@ vector<vector<Cell*>> Board::getZone(Zone zone)
         case TOP_RIGHT:
             start_row = 0;
             start_col = width / 2;
-            end_row = length - 1;
+            end_row = (length / 2) - 1;
             end_col = width - 1;
             break;
         case BOTTOM_LEFT:
