@@ -106,6 +106,7 @@ Board MapManager::loadBoard(int nb_row, int nb_col) const
 
     addBoardLimit(&board);
     addBoardCenter(&board);
+
     addRandomWall(&board, TOP_LEFT, HORYZONTAL);
     addRandomWall(&board, TOP_LEFT, VERTICAL);
     addRandomWall(&board, TOP_RIGHT, HORYZONTAL);
@@ -161,6 +162,14 @@ void MapManager::addBoardLimit(Board* board) const
 void MapManager::addBoardCenter(Board* board) const
 {
     vector<vector<Cell *>> cells = board->getZone(CENTER);
+    pair<int, int> tmp(7, 7);
+    pair<int, int> tmp1(7, 0);
+    pair<int, int> tmp2(0, 7);
+    pair<int, int> tmp3(0, 0);
+    Board::wallsCoordinatesTl.insert(tmp);
+    Board::wallsCoordinatesTr.insert(tmp1);
+    Board::wallsCoordinatesBl.insert(tmp2);
+    Board::wallsCoordinatesBr.insert(tmp3);
 
     for (long unsigned int x = 0; x < cells.size(); x++)
     {
