@@ -1,6 +1,12 @@
 # Projet Ricochet Robots
 ***Le groupe est constitué de ASSE Romain, FERRE Cedric, PROCCACIA Paul et LEQUEUX Alexis.***
 
+Voici le lien menant au dépôt GitHub : https://github.com/ECN-SEC-SMP/tp-note-2023-ricocheh.
+
+Voici le lien menant au dépôt Replit : https://replit.com/join/cuddzfyflh-cedricferre
+
+La documentation technique est disponible via le fichier readme.md ou readme.pdf à la racine du projet ainsi que les fichiers .html et .tex fournis par Doxygen dans les dossiers html et latex disponibles également à la racine du projet.
+
 ## Introduction
 
 Ce projet a pour but d'implémenter le jeu ricochet. Ce projet sera l'occasion d'appliquer et donc de valider l'ensemble des concepts vues pendant les cours.
